@@ -7,3 +7,6 @@ format_commit="%(contents:subject) - %(authorname) (%(color:green)%(committerdat
 format="%(HEAD) $format_refname - $format_commit"
 alias gb="git for-each-ref --sort=committerdate refs/heads/ --format='$format'"
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
